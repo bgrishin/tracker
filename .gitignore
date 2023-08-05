@@ -1,0 +1,8 @@
+common/data/data.txt
+common/data/images/*.jpg
+.env
+.idea
+.DS_Store
+node_modules
+.next
+
