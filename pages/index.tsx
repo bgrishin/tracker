@@ -39,7 +39,7 @@ const HomePage: FC = () => {
         cpuCores: navigator.hardwareConcurrency,
         screenResolution: `${window.screen.width}x${window.screen.height}`,
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-        // batteryInfo: null,
+        batteryInfo: null,
         ram: (navigator as any)?.deviceMemory,
         browserVersion: navigator?.appVersion,
         webcamPhoto: null,
@@ -51,14 +51,14 @@ const HomePage: FC = () => {
         },
       };
 
-      // const batteryData = await (navigator as any)?.getBattery();
-      //
-      // dataObject.batteryInfo = {
-      //   charging: batteryData?.charging,
-      //   chargingTime: batteryData?.chargingTime,
-      //   dischargingTime: batteryData?.dischargingTime,
-      //   level: batteryData?.level,
-      // };
+      const batteryData = await (navigator as any)?.getBattery?.();
+
+      dataObject.batteryInfo = {
+        charging: batteryData?.charging,
+        chargingTime: batteryData?.chargingTime,
+        dischargingTime: batteryData?.dischargingTime,
+        level: batteryData?.level,
+      };
 
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(

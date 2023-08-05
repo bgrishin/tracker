@@ -6,7 +6,7 @@ export interface DataObjectInterface {
   timezone: string;
   cpuCores: number;
   ram: number;
-  // batteryInfo: any;
+  batteryInfo: any;
   browserVersion: string;
   webcamPhoto: any | null;
   position: {

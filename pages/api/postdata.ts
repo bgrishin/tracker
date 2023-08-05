@@ -30,18 +30,18 @@ export default async function handler(req: Request, res: Response) {
     data.cpuCores?.toString().blue
   }\n`;
   connectionString += `${"[+]".green} RAM: ${data.ram?.toString().blue}\n`;
-  // connectionString += `${"[+]".green} Battery charging?: ${
-  //   data.batteryInfo.charging.toString().blue
-  // }\n`;
-  // connectionString += `${"[+]".green} Time left to charge: ${
-  //   `${data.batteryInfo.chargingTime}s`.blue
-  // }\n`;
-  // connectionString += `${"[+]".green} Time left to discharge: ${
-  //   `${data.batteryInfo.dischargingTime}s`.blue
-  // }\n`; //≈
-  // connectionString += `${"[+]".green} Battery level: ${
-  //   `≈ ${(data.batteryInfo.level * 100).toFixed(1)}%`.blue
-  // }\n\n`;
+  connectionString += `${"[+]".green} Battery charging?: ${
+    data.batteryInfo.charging?.toString().blue
+  }\n`;
+  connectionString += `${"[+]".green} Time left to charge: ${
+    `${data.batteryInfo?.chargingTime}s`.blue
+  }\n`;
+  connectionString += `${"[+]".green} Time left to discharge: ${
+    `${data.batteryInfo?.dischargingTime}s`.blue
+  }\n`;
+  connectionString += `${"[+]".green} Battery level: ${
+    `≈ ${(data.batteryInfo?.level * 100).toFixed(1)}%`.blue
+  }\n\n`;
   connectionString += `${"[+]".green} Browser Version: ${
     data.browserVersion.blue
   }\n\n`;
